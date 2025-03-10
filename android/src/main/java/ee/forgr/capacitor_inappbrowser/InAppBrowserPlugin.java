@@ -34,7 +34,6 @@ import org.json.JSONObject;
 @CapacitorPlugin(
   name = "InAppBrowser",
   permissions = {
-    @Permission(alias = "camera", strings = { Manifest.permission.CAMERA }),
     @Permission(
       alias = "microphone",
       strings = { Manifest.permission.RECORD_AUDIO }
@@ -42,10 +41,6 @@ import org.json.JSONObject;
     @Permission(
       alias = "storage",
       strings = { Manifest.permission.READ_EXTERNAL_STORAGE }
-    ),
-    @Permission(
-      alias = "storage",
-      strings = { Manifest.permission.READ_MEDIA_IMAGES }
     ),
   },
   requestCodes = { WebViewDialog.FILE_CHOOSER_REQUEST_CODE }

@@ -206,7 +206,8 @@ open class WKWebViewController: UIViewController, WKScriptMessageHandler {
     }()
 
     fileprivate lazy var doneBarButtonItem: UIBarButtonItem = {
-        return UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneDidClick(sender:)))
+//        return UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneDidClick(sender:)))
+        return UIBarButtonItem(title: "닫기", style: .plain, target: self, action: #selector(doneDidClick(sender:)))
     }()
 
     fileprivate lazy var flexibleSpaceBarButtonItem: UIBarButtonItem = {
