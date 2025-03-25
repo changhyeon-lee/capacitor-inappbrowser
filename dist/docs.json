@@ -1,0 +1,1851 @@
+{
+  "api": {
+    "name": "InAppBrowserPlugin",
+    "slug": "inappbrowserplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "open",
+        "signature": "(options: OpenOptions) => Promise<any>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "OpenOptions"
+          }
+        ],
+        "returns": "Promise<any>",
+        "tags": [
+          {
+            "name": "since",
+            "text": "0.1.0"
+          }
+        ],
+        "docs": "Open url in a new window fullscreen",
+        "complexTypes": [
+          "OpenOptions"
+        ],
+        "slug": "open"
+      },
+      {
+        "name": "clearCookies",
+        "signature": "(options: ClearCookieOptions) => Promise<any>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "ClearCookieOptions"
+          }
+        ],
+        "returns": "Promise<any>",
+        "tags": [
+          {
+            "name": "since",
+            "text": "0.5.0"
+          }
+        ],
+        "docs": "Clear cookies of url",
+        "complexTypes": [
+          "ClearCookieOptions"
+        ],
+        "slug": "clearcookies"
+      },
+      {
+        "name": "clearAllCookies",
+        "signature": "() => Promise<any>",
+        "parameters": [],
+        "returns": "Promise<any>",
+        "tags": [
+          {
+            "name": "since",
+            "text": "6.5.0"
+          }
+        ],
+        "docs": "Clear all cookies",
+        "complexTypes": [],
+        "slug": "clearallcookies"
+      },
+      {
+        "name": "clearCache",
+        "signature": "() => Promise<any>",
+        "parameters": [],
+        "returns": "Promise<any>",
+        "tags": [
+          {
+            "name": "since",
+            "text": "6.5.0"
+          }
+        ],
+        "docs": "Clear cache",
+        "complexTypes": [],
+        "slug": "clearcache"
+      },
+      {
+        "name": "getCookies",
+        "signature": "(options: GetCookieOptions) => Promise<Record<string, string>>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "The options, including the URL to get cookies for.",
+            "type": "GetCookieOptions"
+          }
+        ],
+        "returns": "Promise<Record<string, string>>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options The options, including the URL to get cookies for."
+          },
+          {
+            "name": "returns",
+            "text": "A promise that resolves with the cookies."
+          }
+        ],
+        "docs": "Get cookies for a specific URL.",
+        "complexTypes": [
+          "Record",
+          "GetCookieOptions"
+        ],
+        "slug": "getcookies"
+      },
+      {
+        "name": "close",
+        "signature": "() => Promise<any>",
+        "parameters": [],
+        "returns": "Promise<any>",
+        "tags": [],
+        "docs": "Close the webview.",
+        "complexTypes": [],
+        "slug": "close"
+      },
+      {
+        "name": "openWebView",
+        "signature": "(options: OpenWebViewOptions) => Promise<any>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "OpenWebViewOptions"
+          }
+        ],
+        "returns": "Promise<any>",
+        "tags": [
+          {
+            "name": "since",
+            "text": "0.1.0"
+          }
+        ],
+        "docs": "Open url in a new webview with toolbars",
+        "complexTypes": [
+          "OpenWebViewOptions"
+        ],
+        "slug": "openwebview"
+      },
+      {
+        "name": "executeScript",
+        "signature": "({ code }: { code: string; }) => Promise<void>",
+        "parameters": [
+          {
+            "name": "__0",
+            "docs": "",
+            "type": "{ code: string; }"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "Injects JavaScript code into the InAppBrowser window.",
+        "complexTypes": [],
+        "slug": "executescript"
+      },
+      {
+        "name": "postMessage",
+        "signature": "(options: { detail: Record<string, any>; }) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ detail: Record<string, any>; }"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "Sends an event to the webview. you can listen to this event with addListener(\"messageFromWebview\", listenerFunc: (event: Record<string, any>) => void)\r\ndetail is the data you want to send to the webview, it's a requirement of Capacitor we cannot send direct objects\r\nYour object has to be serializable to JSON, so no functions or other non-JSON-serializable types are allowed.",
+        "complexTypes": [
+          "Record"
+        ],
+        "slug": "postmessage"
+      },
+      {
+        "name": "setUrl",
+        "signature": "(options: { url: string; }) => Promise<any>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ url: string; }"
+          }
+        ],
+        "returns": "Promise<any>",
+        "tags": [],
+        "docs": "Sets the URL of the webview.",
+        "complexTypes": [],
+        "slug": "seturl"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: \"urlChangeEvent\", listenerFunc: UrlChangeListener) => Promise<PluginListenerHandle>",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'urlChangeEvent'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "UrlChangeListener"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle>",
+        "tags": [
+          {
+            "name": "since",
+            "text": "0.0.1"
+          }
+        ],
+        "docs": "Listen for url change, only for openWebView",
+        "complexTypes": [
+          "PluginListenerHandle",
+          "UrlChangeListener"
+        ],
+        "slug": "addlistenerurlchangeevent-"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: \"buttonNearDoneClick\", listenerFunc: ButtonNearListener) => Promise<PluginListenerHandle>",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'buttonNearDoneClick'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "ButtonNearListener"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PluginListenerHandle",
+          "ButtonNearListener"
+        ],
+        "slug": "addlistenerbuttonneardoneclick-"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: \"closeEvent\", listenerFunc: UrlChangeListener) => Promise<PluginListenerHandle>",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'closeEvent'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "UrlChangeListener"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle>",
+        "tags": [
+          {
+            "name": "since",
+            "text": "0.4.0"
+          }
+        ],
+        "docs": "Listen for close click only for openWebView",
+        "complexTypes": [
+          "PluginListenerHandle",
+          "UrlChangeListener"
+        ],
+        "slug": "addlistenercloseevent-"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: \"confirmBtnClicked\", listenerFunc: ConfirmBtnListener) => Promise<PluginListenerHandle>",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'confirmBtnClicked'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "ConfirmBtnListener"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle>",
+        "tags": [
+          {
+            "name": "since",
+            "text": "0.0.1"
+          }
+        ],
+        "docs": "Will be triggered when user clicks on confirm button when disclaimer is required, works only on iOS",
+        "complexTypes": [
+          "PluginListenerHandle",
+          "ConfirmBtnListener"
+        ],
+        "slug": "addlistenerconfirmbtnclicked-"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: \"messageFromWebview\", listenerFunc: (event: { detail: Record<string, any>; }) => void) => Promise<PluginListenerHandle>",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'messageFromWebview'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(event: { detail: Record<string, any>; }) => void"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle>",
+        "tags": [],
+        "docs": "Will be triggered when event is sent from webview, to send an event to the webview use window.mobileApp.postMessage({ \"detail\": { \"message\": \"myMessage\" } })\r\ndetail is the data you want to send to the webview, it's a requirement of Capacitor we cannot send direct objects\r\nYour object has to be serializable to JSON, so no functions or other non-JSON-serializable types are allowed.\r\n\r\nThis method is inject at runtime in the webview",
+        "complexTypes": [
+          "PluginListenerHandle",
+          "Record"
+        ],
+        "slug": "addlistenermessagefromwebview-"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: \"browserPageLoaded\", listenerFunc: () => void) => Promise<PluginListenerHandle>",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'browserPageLoaded'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "() => void"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle>",
+        "tags": [],
+        "docs": "Will be triggered when page is loaded",
+        "complexTypes": [
+          "PluginListenerHandle"
+        ],
+        "slug": "addlistenerbrowserpageloaded-"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: \"pageLoadError\", listenerFunc: () => void) => Promise<PluginListenerHandle>",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'pageLoadError'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "() => void"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle>",
+        "tags": [],
+        "docs": "Will be triggered when page load error",
+        "complexTypes": [
+          "PluginListenerHandle"
+        ],
+        "slug": "addlistenerpageloaderror-"
+      },
+      {
+        "name": "removeAllListeners",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [
+          {
+            "name": "since",
+            "text": "1.0.0"
+          }
+        ],
+        "docs": "Remove all listeners for this plugin.",
+        "complexTypes": [],
+        "slug": "removealllisteners"
+      },
+      {
+        "name": "reload",
+        "signature": "() => Promise<any>",
+        "parameters": [],
+        "returns": "Promise<any>",
+        "tags": [
+          {
+            "name": "since",
+            "text": "1.0.0"
+          }
+        ],
+        "docs": "Reload the current web page.",
+        "complexTypes": [],
+        "slug": "reload"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "OpenOptions",
+      "slug": "openoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "url",
+          "tags": [
+            {
+              "text": "0.1.0",
+              "name": "since"
+            }
+          ],
+          "docs": "Target URL to load.",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "headers",
+          "tags": [
+            {
+              "text": "0.1.0",
+              "name": "since"
+            }
+          ],
+          "docs": "Headers to send with the request.",
+          "complexTypes": [
+            "Headers"
+          ],
+          "type": "Headers"
+        },
+        {
+          "name": "credentials",
+          "tags": [
+            {
+              "text": "6.1.0",
+              "name": "since"
+            }
+          ],
+          "docs": "Credentials to send with the request and all subsequent requests for the same host.",
+          "complexTypes": [
+            "Credentials"
+          ],
+          "type": "Credentials"
+        },
+        {
+          "name": "isPresentAfterPageLoad",
+          "tags": [
+            {
+              "text": "0.1.0",
+              "name": "since"
+            }
+          ],
+          "docs": "if true, the browser will be presented after the page is loaded, if false, the browser will be presented immediately.",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        },
+        {
+          "name": "preventDeeplink",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        }
+      ]
+    },
+    {
+      "name": "Headers",
+      "slug": "headers",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": []
+    },
+    {
+      "name": "Credentials",
+      "slug": "credentials",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "username",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "password",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ClearCookieOptions",
+      "slug": "clearcookieoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "url",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "HttpCookie",
+      "slug": "httpcookie",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "url",
+          "tags": [],
+          "docs": "The URL of the cookie.",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "key",
+          "tags": [],
+          "docs": "The key of the cookie.",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "tags": [],
+          "docs": "The value of the cookie.",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "GetCookieOptions",
+      "slug": "getcookieoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "url",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "includeHttpOnly",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        }
+      ]
+    },
+    {
+      "name": "OpenWebViewOptions",
+      "slug": "openwebviewoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "url",
+          "tags": [
+            {
+              "text": "0.1.0",
+              "name": "since"
+            }
+          ],
+          "docs": "Target URL to load.",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "headers",
+          "tags": [
+            {
+              "text": "0.1.0",
+              "name": "since"
+            }
+          ],
+          "docs": "Headers to send with the request.",
+          "complexTypes": [
+            "Headers"
+          ],
+          "type": "Headers"
+        },
+        {
+          "name": "credentials",
+          "tags": [
+            {
+              "text": "6.1.0",
+              "name": "since"
+            }
+          ],
+          "docs": "Credentials to send with the request and all subsequent requests for the same host.",
+          "complexTypes": [
+            "Credentials"
+          ],
+          "type": "Credentials"
+        },
+        {
+          "name": "shareDisclaimer",
+          "tags": [
+            {
+              "text": "0.1.0",
+              "name": "since"
+            }
+          ],
+          "docs": "share options",
+          "complexTypes": [
+            "DisclaimerOptions"
+          ],
+          "type": "DisclaimerOptions"
+        },
+        {
+          "name": "toolbarType",
+          "tags": [
+            {
+              "text": "0.1.0",
+              "name": "since"
+            },
+            {
+              "text": "ToolBarType.DEFAULT",
+              "name": "default"
+            }
+          ],
+          "docs": "Toolbar type",
+          "complexTypes": [
+            "ToolBarType"
+          ],
+          "type": "ToolBarType"
+        },
+        {
+          "name": "shareSubject",
+          "tags": [
+            {
+              "text": "0.1.0",
+              "name": "since"
+            }
+          ],
+          "docs": "Share subject",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "title",
+          "tags": [
+            {
+              "text": "0.1.0",
+              "name": "since"
+            },
+            {
+              "text": "'New Window'",
+              "name": "default"
+            }
+          ],
+          "docs": "Title of the browser",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "backgroundColor",
+          "tags": [
+            {
+              "text": "0.1.0",
+              "name": "since"
+            },
+            {
+              "text": "BackgroundColor.BLACK",
+              "name": "default"
+            }
+          ],
+          "docs": "Background color of the browser, only on IOS",
+          "complexTypes": [
+            "BackgroundColor"
+          ],
+          "type": "BackgroundColor"
+        },
+        {
+          "name": "activeNativeNavigationForWebview",
+          "tags": [
+            {
+              "text": "false",
+              "name": "default"
+            }
+          ],
+          "docs": "If true, active the native navigation within the webview, Android only",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        },
+        {
+          "name": "disableGoBackOnNativeApplication",
+          "tags": [
+            {
+              "text": "false",
+              "name": "default"
+            }
+          ],
+          "docs": "Disable the possibility to go back on native application,\r\nusefull to force user to stay on the webview, Android only",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        },
+        {
+          "name": "isPresentAfterPageLoad",
+          "tags": [
+            {
+              "text": "0.1.0",
+              "name": "since"
+            },
+            {
+              "text": "false",
+              "name": "default"
+            }
+          ],
+          "docs": "Open url in a new window fullscreen\r\n\r\nisPresentAfterPageLoad: if true, the browser will be presented after the page is loaded, if false, the browser will be presented immediately.",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        },
+        {
+          "name": "isInspectable",
+          "tags": [
+            {
+              "text": "false",
+              "name": "default"
+            }
+          ],
+          "docs": "Whether the website in the webview is inspectable or not, ios only",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        },
+        {
+          "name": "isAnimated",
+          "tags": [
+            {
+              "text": "true",
+              "name": "default"
+            }
+          ],
+          "docs": "Whether the webview opening is animated or not, ios only",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        },
+        {
+          "name": "showReloadButton",
+          "tags": [
+            {
+              "text": "1.0.15",
+              "name": "since"
+            },
+            {
+              "text": "false",
+              "name": "default"
+            }
+          ],
+          "docs": "Shows a reload button that reloads the web page",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        },
+        {
+          "name": "closeModal",
+          "tags": [
+            {
+              "text": "1.1.0",
+              "name": "since"
+            },
+            {
+              "text": "false",
+              "name": "default"
+            }
+          ],
+          "docs": "CloseModal: if true a confirm will be displayed when user clicks on close button, if false the browser will be closed immediately.",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        },
+        {
+          "name": "closeModalTitle",
+          "tags": [
+            {
+              "text": "1.1.0",
+              "name": "since"
+            },
+            {
+              "text": "'Close'",
+              "name": "default"
+            }
+          ],
+          "docs": "CloseModalTitle: title of the confirm when user clicks on close button, only on IOS",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "closeModalDescription",
+          "tags": [
+            {
+              "text": "1.1.0",
+              "name": "since"
+            },
+            {
+              "text": "'Are you sure you want to close this window?'",
+              "name": "default"
+            }
+          ],
+          "docs": "CloseModalDescription: description of the confirm when user clicks on close button, only on IOS",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "closeModalOk",
+          "tags": [
+            {
+              "text": "1.1.0",
+              "name": "since"
+            },
+            {
+              "text": "'Close'",
+              "name": "default"
+            }
+          ],
+          "docs": "CloseModalOk: text of the confirm button when user clicks on close button, only on IOS",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "closeModalCancel",
+          "tags": [
+            {
+              "text": "1.1.0",
+              "name": "since"
+            },
+            {
+              "text": "'Cancel'",
+              "name": "default"
+            }
+          ],
+          "docs": "CloseModalCancel: text of the cancel button when user clicks on close button, only on IOS",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "visibleTitle",
+          "tags": [
+            {
+              "text": "1.2.5",
+              "name": "since"
+            },
+            {
+              "text": "true",
+              "name": "default"
+            }
+          ],
+          "docs": "visibleTitle: if true the website title would be shown else shown empty",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        },
+        {
+          "name": "toolbarColor",
+          "tags": [
+            {
+              "text": "1.2.5",
+              "name": "since"
+            },
+            {
+              "text": "'#ffffff''",
+              "name": "default"
+            }
+          ],
+          "docs": "toolbarColor: color of the toolbar in hex format",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "showArrow",
+          "tags": [
+            {
+              "text": "1.2.5",
+              "name": "since"
+            },
+            {
+              "text": "false",
+              "name": "default"
+            }
+          ],
+          "docs": "showArrow: if true an arrow would be shown instead of cross for closing the window",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        },
+        {
+          "name": "ignoreUntrustedSSLError",
+          "tags": [
+            {
+              "text": "6.1.0",
+              "name": "since"
+            },
+            {
+              "text": "false",
+              "name": "default"
+            }
+          ],
+          "docs": "ignoreUntrustedSSLError: if true, the webview will ignore untrusted SSL errors allowing the user to view the website.",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        },
+        {
+          "name": "preShowScript",
+          "tags": [
+            {
+              "text": "6.6.0",
+              "name": "since"
+            }
+          ],
+          "docs": "preShowScript: if isPresentAfterPageLoad is true and this variable is set the plugin will inject a script before showing the browser.\r\nThis script will be run in an async context. The plugin will wait for the script to finish (max 10 seconds)",
+          "complexTypes": [
+            "String"
+          ],
+          "type": "String"
+        },
+        {
+          "name": "buttonNearDone",
+          "tags": [
+            {
+              "text": "6.7.0",
+              "name": "since"
+            }
+          ],
+          "docs": "buttonNearDone allows for a creation of a custom button. Please see [buttonNearDone.md](/buttonNearDone.md) for more info.",
+          "complexTypes": [
+            "String"
+          ],
+          "type": "{ ios: { iconType: 'sf-symbol' | 'asset'; icon: String; }; android: { iconType: 'asset'; icon: String; width?: number | undefined; height?: number | undefined; }; } | undefined"
+        }
+      ]
+    },
+    {
+      "name": "DisclaimerOptions",
+      "slug": "disclaimeroptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "title",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "message",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "confirmBtn",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "cancelBtn",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "String",
+      "slug": "string",
+      "docs": "Allows manipulation and formatting of text strings and determination and location of substrings within strings.",
+      "tags": [],
+      "methods": [
+        {
+          "name": "toString",
+          "signature": "() => string",
+          "parameters": [],
+          "returns": "string",
+          "tags": [],
+          "docs": "Returns a string representation of a string.",
+          "complexTypes": [],
+          "slug": "tostring"
+        },
+        {
+          "name": "charAt",
+          "signature": "(pos: number) => string",
+          "parameters": [
+            {
+              "name": "pos",
+              "docs": "The zero-based index of the desired character.",
+              "type": "number"
+            }
+          ],
+          "returns": "string",
+          "tags": [
+            {
+              "name": "param",
+              "text": "pos The zero-based index of the desired character."
+            }
+          ],
+          "docs": "Returns the character at the specified index.",
+          "complexTypes": [],
+          "slug": "charat"
+        },
+        {
+          "name": "charCodeAt",
+          "signature": "(index: number) => number",
+          "parameters": [
+            {
+              "name": "index",
+              "docs": "The zero-based index of the desired character. If there is no character at the specified index, NaN is returned.",
+              "type": "number"
+            }
+          ],
+          "returns": "number",
+          "tags": [
+            {
+              "name": "param",
+              "text": "index The zero-based index of the desired character. If there is no character at the specified index, NaN is returned."
+            }
+          ],
+          "docs": "Returns the Unicode value of the character at the specified location.",
+          "complexTypes": [],
+          "slug": "charcodeat"
+        },
+        {
+          "name": "concat",
+          "signature": "(...strings: string[]) => string",
+          "parameters": [
+            {
+              "name": "strings",
+              "docs": "The strings to append to the end of the string.",
+              "type": "string[]"
+            }
+          ],
+          "returns": "string",
+          "tags": [
+            {
+              "name": "param",
+              "text": "strings The strings to append to the end of the string."
+            }
+          ],
+          "docs": "Returns a string that contains the concatenation of two or more strings.",
+          "complexTypes": [],
+          "slug": "concat"
+        },
+        {
+          "name": "indexOf",
+          "signature": "(searchString: string, position?: number | undefined) => number",
+          "parameters": [
+            {
+              "name": "searchString",
+              "docs": "The substring to search for in the string",
+              "type": "string"
+            },
+            {
+              "name": "position",
+              "docs": "The index at which to begin searching the String object. If omitted, search starts at the beginning of the string.",
+              "type": "number | undefined"
+            }
+          ],
+          "returns": "number",
+          "tags": [
+            {
+              "name": "param",
+              "text": "searchString The substring to search for in the string"
+            },
+            {
+              "name": "param",
+              "text": "position The index at which to begin searching the String object. If omitted, search starts at the beginning of the string."
+            }
+          ],
+          "docs": "Returns the position of the first occurrence of a substring.",
+          "complexTypes": [],
+          "slug": "indexof"
+        },
+        {
+          "name": "lastIndexOf",
+          "signature": "(searchString: string, position?: number | undefined) => number",
+          "parameters": [
+            {
+              "name": "searchString",
+              "docs": "The substring to search for.",
+              "type": "string"
+            },
+            {
+              "name": "position",
+              "docs": "The index at which to begin searching. If omitted, the search begins at the end of the string.",
+              "type": "number | undefined"
+            }
+          ],
+          "returns": "number",
+          "tags": [
+            {
+              "name": "param",
+              "text": "searchString The substring to search for."
+            },
+            {
+              "name": "param",
+              "text": "position The index at which to begin searching. If omitted, the search begins at the end of the string."
+            }
+          ],
+          "docs": "Returns the last occurrence of a substring in the string.",
+          "complexTypes": [],
+          "slug": "lastindexof"
+        },
+        {
+          "name": "localeCompare",
+          "signature": "(that: string) => number",
+          "parameters": [
+            {
+              "name": "that",
+              "docs": "String to compare to target string",
+              "type": "string"
+            }
+          ],
+          "returns": "number",
+          "tags": [
+            {
+              "name": "param",
+              "text": "that String to compare to target string"
+            }
+          ],
+          "docs": "Determines whether two strings are equivalent in the current locale.",
+          "complexTypes": [],
+          "slug": "localecompare"
+        },
+        {
+          "name": "match",
+          "signature": "(regexp: string | RegExp) => RegExpMatchArray | null",
+          "parameters": [
+            {
+              "name": "regexp",
+              "docs": "A variable name or string literal containing the regular expression pattern and flags.",
+              "type": "string | RegExp"
+            }
+          ],
+          "returns": "RegExpMatchArray | null",
+          "tags": [
+            {
+              "name": "param",
+              "text": "regexp A variable name or string literal containing the regular expression pattern and flags."
+            }
+          ],
+          "docs": "Matches a string with a regular expression, and returns an array containing the results of that search.",
+          "complexTypes": [
+            "RegExpMatchArray",
+            "RegExp"
+          ],
+          "slug": "match"
+        },
+        {
+          "name": "replace",
+          "signature": "(searchValue: string | RegExp, replaceValue: string) => string",
+          "parameters": [
+            {
+              "name": "searchValue",
+              "docs": "A string to search for.",
+              "type": "string | RegExp"
+            },
+            {
+              "name": "replaceValue",
+              "docs": "A string containing the text to replace for every successful match of searchValue in this string.",
+              "type": "string"
+            }
+          ],
+          "returns": "string",
+          "tags": [
+            {
+              "name": "param",
+              "text": "searchValue A string to search for."
+            },
+            {
+              "name": "param",
+              "text": "replaceValue A string containing the text to replace for every successful match of searchValue in this string."
+            }
+          ],
+          "docs": "Replaces text in a string, using a regular expression or search string.",
+          "complexTypes": [
+            "RegExp"
+          ],
+          "slug": "replace"
+        },
+        {
+          "name": "replace",
+          "signature": "(searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string) => string",
+          "parameters": [
+            {
+              "name": "searchValue",
+              "docs": "A string to search for.",
+              "type": "string | RegExp"
+            },
+            {
+              "name": "replacer",
+              "docs": "A function that returns the replacement text.",
+              "type": "(substring: string, ...args: any[]) => string"
+            }
+          ],
+          "returns": "string",
+          "tags": [
+            {
+              "name": "param",
+              "text": "searchValue A string to search for."
+            },
+            {
+              "name": "param",
+              "text": "replacer A function that returns the replacement text."
+            }
+          ],
+          "docs": "Replaces text in a string, using a regular expression or search string.",
+          "complexTypes": [
+            "RegExp"
+          ],
+          "slug": "replace"
+        },
+        {
+          "name": "search",
+          "signature": "(regexp: string | RegExp) => number",
+          "parameters": [
+            {
+              "name": "regexp",
+              "docs": "The regular expression pattern and applicable flags.",
+              "type": "string | RegExp"
+            }
+          ],
+          "returns": "number",
+          "tags": [
+            {
+              "name": "param",
+              "text": "regexp The regular expression pattern and applicable flags."
+            }
+          ],
+          "docs": "Finds the first substring match in a regular expression search.",
+          "complexTypes": [
+            "RegExp"
+          ],
+          "slug": "search"
+        },
+        {
+          "name": "slice",
+          "signature": "(start?: number | undefined, end?: number | undefined) => string",
+          "parameters": [
+            {
+              "name": "start",
+              "docs": "The index to the beginning of the specified portion of stringObj.",
+              "type": "number | undefined"
+            },
+            {
+              "name": "end",
+              "docs": "The index to the end of the specified portion of stringObj. The substring includes the characters up to, but not including, the character indicated by end.\r\nIf this value is not specified, the substring continues to the end of stringObj.",
+              "type": "number | undefined"
+            }
+          ],
+          "returns": "string",
+          "tags": [
+            {
+              "name": "param",
+              "text": "start The index to the beginning of the specified portion of stringObj."
+            },
+            {
+              "name": "param",
+              "text": "end The index to the end of the specified portion of stringObj. The substring includes the characters up to, but not including, the character indicated by end.\r\nIf this value is not specified, the substring continues to the end of stringObj."
+            }
+          ],
+          "docs": "Returns a section of a string.",
+          "complexTypes": [],
+          "slug": "slice"
+        },
+        {
+          "name": "split",
+          "signature": "(separator: string | RegExp, limit?: number | undefined) => string[]",
+          "parameters": [
+            {
+              "name": "separator",
+              "docs": "A string that identifies character or characters to use in separating the string. If omitted, a single-element array containing the entire string is returned.",
+              "type": "string | RegExp"
+            },
+            {
+              "name": "limit",
+              "docs": "A value used to limit the number of elements returned in the array.",
+              "type": "number | undefined"
+            }
+          ],
+          "returns": "string[]",
+          "tags": [
+            {
+              "name": "param",
+              "text": "separator A string that identifies character or characters to use in separating the string. If omitted, a single-element array containing the entire string is returned."
+            },
+            {
+              "name": "param",
+              "text": "limit A value used to limit the number of elements returned in the array."
+            }
+          ],
+          "docs": "Split a string into substrings using the specified separator and return them as an array.",
+          "complexTypes": [
+            "RegExp"
+          ],
+          "slug": "split"
+        },
+        {
+          "name": "substring",
+          "signature": "(start: number, end?: number | undefined) => string",
+          "parameters": [
+            {
+              "name": "start",
+              "docs": "The zero-based index number indicating the beginning of the substring.",
+              "type": "number"
+            },
+            {
+              "name": "end",
+              "docs": "Zero-based index number indicating the end of the substring. The substring includes the characters up to, but not including, the character indicated by end.\r\nIf end is omitted, the characters from start through the end of the original string are returned.",
+              "type": "number | undefined"
+            }
+          ],
+          "returns": "string",
+          "tags": [
+            {
+              "name": "param",
+              "text": "start The zero-based index number indicating the beginning of the substring."
+            },
+            {
+              "name": "param",
+              "text": "end Zero-based index number indicating the end of the substring. The substring includes the characters up to, but not including, the character indicated by end.\r\nIf end is omitted, the characters from start through the end of the original string are returned."
+            }
+          ],
+          "docs": "Returns the substring at the specified location within a String object.",
+          "complexTypes": [],
+          "slug": "substring"
+        },
+        {
+          "name": "toLowerCase",
+          "signature": "() => string",
+          "parameters": [],
+          "returns": "string",
+          "tags": [],
+          "docs": "Converts all the alphabetic characters in a string to lowercase.",
+          "complexTypes": [],
+          "slug": "tolowercase"
+        },
+        {
+          "name": "toLocaleLowerCase",
+          "signature": "(locales?: string | string[] | undefined) => string",
+          "parameters": [
+            {
+              "name": "locales",
+              "docs": "",
+              "type": "string | string[] | undefined"
+            }
+          ],
+          "returns": "string",
+          "tags": [],
+          "docs": "Converts all alphabetic characters to lowercase, taking into account the host environment's current locale.",
+          "complexTypes": [],
+          "slug": "tolocalelowercase"
+        },
+        {
+          "name": "toUpperCase",
+          "signature": "() => string",
+          "parameters": [],
+          "returns": "string",
+          "tags": [],
+          "docs": "Converts all the alphabetic characters in a string to uppercase.",
+          "complexTypes": [],
+          "slug": "touppercase"
+        },
+        {
+          "name": "toLocaleUpperCase",
+          "signature": "(locales?: string | string[] | undefined) => string",
+          "parameters": [
+            {
+              "name": "locales",
+              "docs": "",
+              "type": "string | string[] | undefined"
+            }
+          ],
+          "returns": "string",
+          "tags": [],
+          "docs": "Returns a string where all alphabetic characters have been converted to uppercase, taking into account the host environment's current locale.",
+          "complexTypes": [],
+          "slug": "tolocaleuppercase"
+        },
+        {
+          "name": "trim",
+          "signature": "() => string",
+          "parameters": [],
+          "returns": "string",
+          "tags": [],
+          "docs": "Removes the leading and trailing white space and line terminator characters from a string.",
+          "complexTypes": [],
+          "slug": "trim"
+        },
+        {
+          "name": "substr",
+          "signature": "(from: number, length?: number | undefined) => string",
+          "parameters": [
+            {
+              "name": "from",
+              "docs": "The starting position of the desired substring. The index of the first character in the string is zero.",
+              "type": "number"
+            },
+            {
+              "name": "length",
+              "docs": "The number of characters to include in the returned substring.",
+              "type": "number | undefined"
+            }
+          ],
+          "returns": "string",
+          "tags": [
+            {
+              "name": "param",
+              "text": "from The starting position of the desired substring. The index of the first character in the string is zero."
+            },
+            {
+              "name": "param",
+              "text": "length The number of characters to include in the returned substring."
+            }
+          ],
+          "docs": "Gets a substring beginning at the specified location and having the specified length.",
+          "complexTypes": [],
+          "slug": "substr"
+        },
+        {
+          "name": "valueOf",
+          "signature": "() => string",
+          "parameters": [],
+          "returns": "string",
+          "tags": [],
+          "docs": "Returns the primitive value of the specified object.",
+          "complexTypes": [],
+          "slug": "valueof"
+        }
+      ],
+      "properties": [
+        {
+          "name": "length",
+          "tags": [],
+          "docs": "Returns the length of a String object.",
+          "complexTypes": [],
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "RegExpMatchArray",
+      "slug": "regexpmatcharray",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "index",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number | undefined"
+        },
+        {
+          "name": "input",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        }
+      ]
+    },
+    {
+      "name": "RegExp",
+      "slug": "regexp",
+      "docs": "",
+      "tags": [],
+      "methods": [
+        {
+          "name": "exec",
+          "signature": "(string: string) => RegExpExecArray | null",
+          "parameters": [
+            {
+              "name": "string",
+              "docs": "The String object or string literal on which to perform the search.",
+              "type": "string"
+            }
+          ],
+          "returns": "RegExpExecArray | null",
+          "tags": [
+            {
+              "name": "param",
+              "text": "string The String object or string literal on which to perform the search."
+            }
+          ],
+          "docs": "Executes a search on a string using a regular expression pattern, and returns an array containing the results of that search.",
+          "complexTypes": [
+            "RegExpExecArray"
+          ],
+          "slug": "exec"
+        },
+        {
+          "name": "test",
+          "signature": "(string: string) => boolean",
+          "parameters": [
+            {
+              "name": "string",
+              "docs": "String on which to perform the search.",
+              "type": "string"
+            }
+          ],
+          "returns": "boolean",
+          "tags": [
+            {
+              "name": "param",
+              "text": "string String on which to perform the search."
+            }
+          ],
+          "docs": "Returns a Boolean value that indicates whether or not a pattern exists in a searched string.",
+          "complexTypes": [],
+          "slug": "test"
+        },
+        {
+          "name": "compile",
+          "signature": "() => this",
+          "parameters": [],
+          "returns": "this",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "slug": "compile"
+        }
+      ],
+      "properties": [
+        {
+          "name": "source",
+          "tags": [],
+          "docs": "Returns a copy of the text of the regular expression pattern. Read-only. The regExp argument is a Regular expression object. It can be a variable name or a literal.",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "global",
+          "tags": [],
+          "docs": "Returns a Boolean value indicating the state of the global flag (g) used with a regular expression. Default is false. Read-only.",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "ignoreCase",
+          "tags": [],
+          "docs": "Returns a Boolean value indicating the state of the ignoreCase flag (i) used with a regular expression. Default is false. Read-only.",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "multiline",
+          "tags": [],
+          "docs": "Returns a Boolean value indicating the state of the multiline flag (m) used with a regular expression. Default is false. Read-only.",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "lastIndex",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "RegExpExecArray",
+      "slug": "regexpexecarray",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "index",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "input",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "PluginListenerHandle",
+      "slug": "pluginlistenerhandle",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "remove",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "() => Promise<void>"
+        }
+      ]
+    },
+    {
+      "name": "UrlEvent",
+      "slug": "urlevent",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "url",
+          "tags": [
+            {
+              "text": "0.0.1",
+              "name": "since"
+            }
+          ],
+          "docs": "Emit when the url changes",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "BtnEvent",
+      "slug": "btnevent",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "url",
+          "tags": [
+            {
+              "text": "0.0.1",
+              "name": "since"
+            }
+          ],
+          "docs": "Emit when a button is clicked.",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "enums": [
+    {
+      "name": "ToolBarType",
+      "slug": "toolbartype",
+      "members": [
+        {
+          "name": "ACTIVITY",
+          "value": "\"activity\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "NAVIGATION",
+          "value": "\"navigation\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "BLANK",
+          "value": "\"blank\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "DEFAULT",
+          "value": "\"\"",
+          "tags": [],
+          "docs": ""
+        }
+      ]
+    },
+    {
+      "name": "BackgroundColor",
+      "slug": "backgroundcolor",
+      "members": [
+        {
+          "name": "WHITE",
+          "value": "\"white\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "BLACK",
+          "value": "\"black\"",
+          "tags": [],
+          "docs": ""
+        }
+      ]
+    }
+  ],
+  "typeAliases": [
+    {
+      "name": "ClearCookieOptions",
+      "slug": "clearcookieoptions",
+      "docs": "",
+      "types": [
+        {
+          "text": "Omit<HttpCookie, 'key' | 'value'>",
+          "complexTypes": [
+            "Omit",
+            "HttpCookie"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Omit",
+      "slug": "omit",
+      "docs": "Construct a type with the properties of T except for those in type K.",
+      "types": [
+        {
+          "text": "Pick<T, Exclude<keyof T, K>>",
+          "complexTypes": [
+            "Pick",
+            "T",
+            "Exclude",
+            "K"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pick",
+      "slug": "pick",
+      "docs": "From T, pick a set of properties whose keys are in the union K",
+      "types": [
+        {
+          "text": "{\r\n    [P in K]: T[P];\r\n}",
+          "complexTypes": [
+            "K",
+            "T",
+            "P"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Exclude",
+      "slug": "exclude",
+      "docs": "Exclude from T those types that are assignable to U",
+      "types": [
+        {
+          "text": "T extends U ? never : T",
+          "complexTypes": [
+            "T",
+            "U"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Record",
+      "slug": "record",
+      "docs": "Construct a type with a set of properties K of type T",
+      "types": [
+        {
+          "text": "{\r\n    [P in K]: T;\r\n}",
+          "complexTypes": [
+            "K",
+            "T"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GetCookieOptions",
+      "slug": "getcookieoptions",
+      "docs": "",
+      "types": [
+        {
+          "text": "Omit<HttpCookie, 'key' | 'value'>",
+          "complexTypes": [
+            "Omit",
+            "HttpCookie"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UrlChangeListener",
+      "slug": "urlchangelistener",
+      "docs": "",
+      "types": [
+        {
+          "text": "(state: UrlEvent): void",
+          "complexTypes": [
+            "UrlEvent"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ButtonNearListener",
+      "slug": "buttonnearlistener",
+      "docs": "",
+      "types": [
+        {
+          "text": "(state: {}): void",
+          "complexTypes": []
+        }
+      ]
+    },
+    {
+      "name": "ConfirmBtnListener",
+      "slug": "confirmbtnlistener",
+      "docs": "",
+      "types": [
+        {
+          "text": "(state: BtnEvent): void",
+          "complexTypes": [
+            "BtnEvent"
+          ]
+        }
+      ]
+    }
+  ],
+  "pluginConfigs": []
+}
